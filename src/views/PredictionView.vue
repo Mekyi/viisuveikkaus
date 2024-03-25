@@ -1,3 +1,3 @@
 <template>
-  <RouterView />
+  <h1>Prediction</h1>
 </template>

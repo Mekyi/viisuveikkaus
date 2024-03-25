@@ -1,3 +1,3 @@
 <template>
-  <RouterView />
+  <h1>Rating</h1>
 </template>
