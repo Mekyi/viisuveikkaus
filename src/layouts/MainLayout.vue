@@ -1,8 +1,15 @@
+<script setup lang="ts">
+const props = defineProps<{
+  title?: String
+}>()
+</script>
+
 <template>
   <QLayout view="hHh lpR lFf">
     <QHeader elevated>
       <QToolbar>
-        <QToolbarTitle>Title</QToolbarTitle>
+        <QToolbarTitle v-if="props.title">Viisuveikkaus - {{ props.title }}</QToolbarTitle>
+        <QToolbarTitle v-else>Viisuveikkaus</QToolbarTitle>
       </QToolbar>
 
       <QTabs>
