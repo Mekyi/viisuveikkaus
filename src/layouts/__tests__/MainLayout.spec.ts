@@ -11,7 +11,14 @@ installQuasarPlugin()
 describe('MainLayout.vue', () => {
   it('contains title prop in header', () => {
     const title = 'This is the title string prop'
-    const wrapper = mount(MainLayout, { props: { title } })
+    const wrapper = mount(MainLayout, {
+      global: {
+        mocks: {
+          $t: (msg: String) => msg
+        }
+      },
+      props: { title }
+    })
 
     expect(wrapper.find('header').text()).toContain(title)
   })
@@ -19,6 +26,9 @@ describe('MainLayout.vue', () => {
   it('has nested RouterView', () => {
     const wrapper = mount(MainLayout, {
       global: {
+        mocks: {
+          $t: (msg: String) => msg
+        },
         plugins: [router]
       }
     })

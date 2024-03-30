@@ -8,8 +8,8 @@ const props = defineProps<{
   <QLayout view="hHh lpR lFf">
     <QHeader elevated>
       <QToolbar>
-        <QToolbarTitle v-if="props.title">Viisuveikkaus - {{ props.title }}</QToolbarTitle>
-        <QToolbarTitle v-else>Viisuveikkaus</QToolbarTitle>
+        <QToolbarTitle v-if="props.title">{{ $t('title') }} - {{ props.title }}</QToolbarTitle>
+        <QToolbarTitle v-else>{{ $t('title') }}</QToolbarTitle>
       </QToolbar>
 
       <QTabs>
