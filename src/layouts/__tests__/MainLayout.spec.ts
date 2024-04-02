@@ -1,22 +1,17 @@
 import { describe, it, expect } from 'vitest'
 
 import { installQuasarPlugin } from '@quasar/quasar-app-extension-testing-unit-vitest'
-import { mount } from '@vue/test-utils'
 import MainLayout from '../MainLayout.vue'
 import { RouterView } from 'vue-router'
-import router from '@/router'
+import createWrapper from '../../../tests/create-wrapper'
 
 installQuasarPlugin()
 
 describe('MainLayout.vue', () => {
   it('contains title prop in header', () => {
     const title = 'This is the title string prop'
-    const wrapper = mount(MainLayout, {
-      global: {
-        mocks: {
-          $t: (msg: String) => msg
-        }
-      },
+
+    const wrapper = createWrapper(MainLayout, {
       props: { title }
     })
 
@@ -24,14 +19,7 @@ describe('MainLayout.vue', () => {
   })
 
   it('has nested RouterView', () => {
-    const wrapper = mount(MainLayout, {
-      global: {
-        mocks: {
-          $t: (msg: String) => msg
-        },
-        plugins: [router]
-      }
-    })
+    const wrapper = createWrapper(MainLayout)
 
     expect(wrapper.findComponent(RouterView).exists()).toBe(true)
   })
