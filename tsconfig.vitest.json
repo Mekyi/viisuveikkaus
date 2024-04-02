@@ -1,5 +1,6 @@
 {
   "extends": "./tsconfig.app.json",
+  "include": ["./tests/create-wrapper.ts", "./src/router"],
   "exclude": [],
   "compilerOptions": {
     "composite": true,
