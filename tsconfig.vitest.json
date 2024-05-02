@@ -1,6 +1,6 @@
 {
   "extends": "./tsconfig.app.json",
-  "include": ["./tests/create-wrapper.ts", "./src/router"],
+  "include": ["env.d.ts", "src/**/*", "src/**/*.vue", "tests/**/*"],
   "exclude": [],
   "compilerOptions": {
     "composite": true,
