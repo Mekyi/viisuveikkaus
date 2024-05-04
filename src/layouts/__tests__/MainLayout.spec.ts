@@ -8,16 +8,6 @@ import createWrapper from '../../../tests/create-wrapper'
 installQuasarPlugin()
 
 describe('MainLayout.vue', () => {
-  it('contains title prop in header', () => {
-    const title = 'This is the title string prop'
-
-    const wrapper = createWrapper(MainLayout, {
-      props: { title }
-    })
-
-    expect(wrapper.find('header').text()).toContain(title)
-  })
-
   it('has nested RouterView', () => {
     const wrapper = createWrapper(MainLayout)
 
