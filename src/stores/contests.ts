@@ -11,7 +11,7 @@ export const useContestsStore = defineStore('contests', () => {
 
   contests.value = contestsData
 
-  const getContestants = computed(() => {
+  const contestants = computed(() => {
     const foundContest = contests.value?.find((contest) => contest.year === selectedYear.value)
     if (!foundContest) {
       return []
@@ -25,5 +25,14 @@ export const useContestsStore = defineStore('contests', () => {
     return foundShow.contestants
   })
 
-  return { selectedYear, selectedShow, getContestants }
+  const availableShows = computed(() => {
+    const foundContest = contests.value?.find((contest) => contest.year === selectedYear.value)
+    if (!foundContest) {
+      return []
+    }
+
+    return foundContest.shows
+  })
+
+  return { selectedYear, selectedShow, getContestants: contestants, availableShows }
 })

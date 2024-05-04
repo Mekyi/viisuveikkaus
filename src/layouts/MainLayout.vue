@@ -1,22 +1,33 @@
 <script setup lang="ts">
-const props = defineProps<{
-  title?: String
-}>()
+import { useContestsStore } from '@/stores/contests'
+import { ref } from 'vue'
+
+const toggleSideMenu = ref(false)
+const contestsStore = useContestsStore()
 </script>
 
 <template>
-  <QLayout view="hHh lpR lFf">
+  <QLayout view="hHh Lpr fff">
     <QHeader elevated>
       <QToolbar>
-        <QToolbarTitle v-if="props.title">{{ $t('title') }} - {{ props.title }}</QToolbarTitle>
-        <QToolbarTitle v-else>{{ $t('title') }}</QToolbarTitle>
+        <QBtn
+          flat
+          round
+          dense
+          icon="menu"
+          @click="toggleSideMenu = !toggleSideMenu"
+        />
+        <QToolbarTitle>
+          {{ $t('title') }} {{ contestsStore.selectedYear }} -
+          {{ contestsStore.selectedShow }}
+        </QToolbarTitle>
         <QBtn
           flat
           round
           dense
           icon="more_vert"
         >
-          <QMenu ref="menu">
+          <QMenu>
             <QItem>
               <QSelect
                 v-model="$i18n.locale"
@@ -33,6 +44,29 @@ const props = defineProps<{
         </QBtn>
       </QToolbar>
     </QHeader>
+
+    <QDrawer
+      v-model="toggleSideMenu"
+      show-if-above
+      :breakpoint="500"
+      bordered
+      behavior="desktop"
+      overlay
+    >
+      <QScrollArea class="fit">
+        <QList bordered>
+          <QItem
+            v-for="show in contestsStore.availableShows"
+            :key="show.showType"
+            v-ripple
+            clickable
+            @click="contestsStore.selectedShow = show.showType"
+          >
+            <QItemSection>{{ show.showType }} - {{ show.date }}</QItemSection>
+          </QItem>
+        </QList>
+      </QScrollArea>
+    </QDrawer>
 
     <QPageContainer>
       <QPage padding>
