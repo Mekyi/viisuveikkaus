@@ -1,0 +1,205 @@
+[{
+  "year": 2024,
+  "shows": [{
+      "date": "2024-05-07",
+      "showType": 1,
+      "contestants": [{
+          "country": "CY",
+          "order": 1,
+          "artist": "Silia Kapsis",
+          "song": "Liar"
+        },
+        {
+          "country": "RS",
+          "order": 2,
+          "artist": "Teya Dora",
+          "song": "Ramonda"
+        },
+        {
+          "country": "LT",
+          "order": 3,
+          "artist": "Silvester Belt",
+          "song": "Luktelk"
+        },
+        {
+          "country": "IE",
+          "order": 4,
+          "artist": "Bambie Thug",
+          "song": "Doomsday Blue"
+        },
+        {
+          "country": "UA",
+          "order": 5,
+          "artist": "Alyona Alyona and Jerry Heil",
+          "song": "Teresa & Maria"
+        },
+        {
+          "country": "PL",
+          "order": 6,
+          "artist": "Luna",
+          "song": "The Tower"
+        },
+        {
+          "country": "HR",
+          "order": 7,
+          "artist": "Baby Lasagna",
+          "song": "Rim Tim Tagi Dim"
+        },
+        {
+          "country": "IS",
+          "order": 8,
+          "artist": "Hera Björk",
+          "song": "Scared of Heights"
+        },
+        {
+          "country": "SI",
+          "order": 9,
+          "artist": "Raiven",
+          "song": "Veronika"
+        },
+        {
+          "country": "FI",
+          "order": 10,
+          "artist": "Windows95man",
+          "song": "No Rules!"
+        },
+        {
+          "country": "MD",
+          "order": 11,
+          "artist": "Natalia Barbu",
+          "song": "In the Middle"
+        },
+        {
+          "country": "AZ",
+          "order": 12,
+          "artist": "Fahree feat. Ilkin Dovlatov",
+          "song": "Özünlə apar"
+        },
+        {
+          "country": "AU",
+          "order": 13,
+          "artist": "Electric Fields",
+          "song": "One Milkali (One Blood)"
+        },
+        {
+          "country": "PT",
+          "order": 14,
+          "artist": "Iolanda",
+          "song": "Grito"
+        },
+        {
+          "country": "LU",
+          "order": 15,
+          "artist": "Tali",
+          "song": "Fighter"
+        }
+      ]
+    },
+    {
+      "date": "2024-05-09",
+      "showType": 2,
+      "contestants": [{
+          "country": "MT",
+          "order": 1,
+          "artist": "Sarah Bonnici",
+          "song": "Loop"
+        },
+        {
+          "country": "AL",
+          "order": 2,
+          "artist": "Besa",
+          "song": "Titan"
+        },
+        {
+          "country": "GR",
+          "order": 3,
+          "artist": "Marina Satti",
+          "song": "Zari"
+        },
+        {
+          "country": "CH",
+          "order": 4,
+          "artist": "Nemo",
+          "song": "The country"
+        },
+        {
+          "country": "CZ",
+          "order": 5,
+          "artist": "Aiko",
+          "song": "Pedestal"
+        },
+        {
+          "country": "AT",
+          "order": 6,
+          "artist": "Kaleen",
+          "song": "We Will Rave"
+        },
+        {
+          "country": "DK",
+          "order": 7,
+          "artist": "Saba",
+          "song": "Sand"
+        },
+        {
+          "country": "AM",
+          "order": 8,
+          "artist": "Ladaniva",
+          "song": "Jako"
+        },
+        {
+          "country": "LV",
+          "order": 9,
+          "artist": "Dons",
+          "song": "Hollow"
+        },
+        {
+          "country": "SM",
+          "order": 10,
+          "artist": "Megara",
+          "song": "11:11"
+        },
+        {
+          "country": "GE",
+          "order": 11,
+          "artist": "Nutsa Buzaladze",
+          "song": "Firefighter"
+        },
+        {
+          "country": "BE",
+          "order": 12,
+          "artist": "Mustii",
+          "song": "Before the Party's Over"
+        },
+        {
+          "country": "EE",
+          "order": 13,
+          "artist": "5miinust and Puuluup",
+          "song": "(Nendest) narkootikumidest ei tea me (küll) midagi"
+        },
+        {
+          "country": "IL",
+          "order": 14,
+          "artist": "Eden Golan",
+          "song": "Hurricane"
+        },
+        {
+          "country": "NO",
+          "order": 15,
+          "artist": "Gåte",
+          "song": "Ulveham"
+        },
+        {
+          "country": "NL",
+          "order": 16,
+          "artist": "Joost Klein",
+          "song": "Europapa"
+        }
+      ]
+    },
+    {
+      "date": "2024-05-11",
+      "showType": 3,
+      "contestants": []
+    }
+  ]
+}]
