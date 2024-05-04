@@ -10,16 +10,49 @@ const props = defineProps<{
       <QToolbar>
         <QToolbarTitle v-if="props.title">{{ $t('title') }} - {{ props.title }}</QToolbarTitle>
         <QToolbarTitle v-else>{{ $t('title') }}</QToolbarTitle>
+        <QBtn
+          flat
+          round
+          dense
+          icon="more_vert"
+        >
+          <QMenu ref="menu">
+            <QItem>
+              <QSelect
+                v-model="$i18n.locale"
+                :options="$i18n.availableLocales"
+                style="min-width: 150px"
+                borderless
+              >
+                <template #prepend>
+                  <QIcon name="language" />
+                </template>
+              </QSelect>
+            </QItem>
+          </QMenu>
+        </QBtn>
       </QToolbar>
-
-      <QTabs>
-        <QRouteTab to="/rating" label="Rating" />
-        <QRouteTab to="/prediction" label="Prediction" />
-      </QTabs>
     </QHeader>
 
-    <QPageContainer>
+    <QPageContainer class="fit">
       <RouterView />
     </QPageContainer>
+
+    <QFooter>
+      <QTabs>
+        <QRouteTab
+          to="/rating"
+          :label="$t('rating.title')"
+        />
+        <QRouteTab
+          to="/prediction"
+          :label="$t('prediction.title')"
+        />
+        <QRouteTab
+          to="/countries"
+          :label="$t('countries.title')"
+        />
+      </QTabs>
+    </QFooter>
   </QLayout>
 </template>
