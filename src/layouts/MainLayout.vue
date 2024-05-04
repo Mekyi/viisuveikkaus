@@ -34,8 +34,10 @@ const props = defineProps<{
       </QToolbar>
     </QHeader>
 
-    <QPageContainer class="fit">
-      <RouterView />
+    <QPageContainer>
+      <QPage padding>
+        <RouterView />
+      </QPage>
     </QPageContainer>
 
     <QFooter>
