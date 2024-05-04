@@ -7,7 +7,7 @@ const contestsStore = useContestsStore()
 </script>
 
 <template>
-  <QLayout view="hHh Lpr fff">
+  <QLayout view="hHh Lpr fFf">
     <QHeader elevated>
       <QToolbar>
         <QBtn
@@ -74,7 +74,7 @@ const contestsStore = useContestsStore()
       </QPage>
     </QPageContainer>
 
-    <QFooter>
+    <QFooter elevated>
       <QTabs>
         <QRouteTab
           to="/rating"
