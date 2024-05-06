@@ -1,7 +1,8 @@
 {
   "title": "Viisuveikkaus",
   "common": {
-    "confirm": "Vahvista"
+    "confirm": "Vahvista",
+    "clear": "Tyhjennä"
   },
   "rating": {
     "title": "Arviointi",

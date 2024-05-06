@@ -1,7 +1,8 @@
 {
   "title": "Viisuveikkaus",
   "common": {
-    "confirm": "Confirm"
+    "confirm": "Confirm",
+    "clear": "Clear"
   },
   "rating": {
     "title": "Rating",

@@ -4,6 +4,11 @@ import { ref } from 'vue'
 
 const toggleSideMenu = ref(false)
 const contestsStore = useContestsStore()
+
+function clearContestStorage() {
+  contestsStore.contests = null
+  location.reload()
+}
 </script>
 
 <template>
@@ -40,6 +45,14 @@ const contestsStore = useContestsStore()
                 </template>
               </QSelect>
             </QItem>
+            <QSeparator />
+            <QItem
+              v-close-popup
+              clickable
+              @click="clearContestStorage"
+            >
+              <QItemSection>{{ $t('common.clear') }}</QItemSection>
+            </QItem>
           </QMenu>
         </QBtn>
       </QToolbar>
@@ -50,7 +63,6 @@ const contestsStore = useContestsStore()
       show-if-above
       :breakpoint="500"
       bordered
-      behavior="desktop"
       overlay
     >
       <QScrollArea class="fit">
