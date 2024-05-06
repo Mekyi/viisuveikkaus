@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "@quasar/extras": "^1.16.9",
+    "@vueuse/core": "^10.9.0",
     "pinia": "^2.1.7",
     "quasar": "^2.15.1",
     "vue": "^3.4.21",

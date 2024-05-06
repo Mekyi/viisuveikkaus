@@ -12,5 +12,6 @@ contestsStore.selectedShow = ShowFormat.SecondSemiFinal
     v-for="contestant in contestsStore.getContestants"
     :key="contestant.country"
     :contestant="contestant"
+    :can-rate="true"
   />
 </template>

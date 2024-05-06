@@ -1,7 +1,12 @@
 {
   "title": "Viisuveikkaus",
+  "common": {
+    "confirm": "Confirm",
+    "clear": "Clear"
+  },
   "rating": {
-    "title": "Rating"
+    "title": "Rating",
+    "rateHint": "Rate the performance"
   },
   "prediction": {
     "title": "Prediction"
