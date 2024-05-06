@@ -3,13 +3,12 @@ import contestsData from '@/data/contests.json'
 import { type Contest } from '@/ts/types/contest'
 import ShowFormat from '@/ts/enums/showFormat'
 import { computed, ref } from 'vue'
+import { useStorage } from '@vueuse/core'
 
 export const useContestsStore = defineStore('contests', () => {
-  const contests = ref<Contest[]>()
+  const contests = useStorage<Contest[] | null>('contests', contestsData, localStorage)
   const selectedYear = ref<number>(2024)
   const selectedShow = ref<ShowFormat>(ShowFormat.FirstSemiFinal)
-
-  contests.value = contestsData
 
   const contestants = computed(() => {
     const foundContest = contests.value?.find((contest) => contest.year === selectedYear.value)
@@ -34,5 +33,5 @@ export const useContestsStore = defineStore('contests', () => {
     return foundContest.shows
   })
 
-  return { selectedYear, selectedShow, getContestants: contestants, availableShows }
+  return { contests, selectedYear, selectedShow, getContestants: contestants, availableShows }
 })
