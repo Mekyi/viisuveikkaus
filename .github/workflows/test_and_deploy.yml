@@ -29,6 +29,8 @@ jobs:
   # Deployment job
   deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
     name: Deploy
     if: success() && github.ref == 'refs/heads/main'
     steps:
