@@ -1,4 +1,4 @@
-# Song Contest Rating
+# Song Contest Rating (WIP)
 
 ## Recommended IDE Setup
 
