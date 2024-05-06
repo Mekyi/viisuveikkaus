@@ -1,7 +1,11 @@
 {
   "title": "Viisuveikkaus",
+  "common": {
+    "confirm": "Vahvista"
+  },
   "rating": {
-    "title": "Arviointi"
+    "title": "Arviointi",
+    "rateHint": "Arvostele esitys"
   },
   "prediction": {
     "title": "Veikkaus"
