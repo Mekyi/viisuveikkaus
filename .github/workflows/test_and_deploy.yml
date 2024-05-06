@@ -1,7 +1,7 @@
 # This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
 
-name: Build & Test
+name: Test & Deploy
 
 on:
   push:
@@ -10,33 +10,23 @@ on:
     branches: ['main']
 
 jobs:
-  # Build & Test job
-  build:
+  # Test job
+  test:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [20.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
     steps:
       - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'npm'
-      - run: npm ci
-      - run: npm run build --if-present
-      - run: npm run test:unit
-      - run: npm run test:e2e
+      - run: |
+          npm ci
+          npm run build --if-present
+          npm run test:unit
+          npm run test:e2e
 
   # Deployment job
   deploy:
     environment:
       name: github-pages
     runs-on: ubuntu-latest
-    needs: build
+    if: success() && github.ref == 'refs/heads/main'
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
