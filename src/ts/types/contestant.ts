@@ -4,4 +4,5 @@ export type Contestant = {
   song: string
   order: number
   rating?: number
+  predictedPlacement?: number
 }
