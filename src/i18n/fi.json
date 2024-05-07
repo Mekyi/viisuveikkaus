@@ -2,7 +2,7 @@
   "title": "Viisuveikkaus",
   "common": {
     "confirm": "Vahvista",
-    "clear": "Tyhjennä"
+    "clear": "Tyhjennä syötteet"
   },
   "showType": {
     "1": "1. semifinaali",
