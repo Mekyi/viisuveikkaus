@@ -16,6 +16,7 @@ type MessageSchema = typeof en
 const app = createApp(App)
 
 const i18n = createI18n<[MessageSchema], 'en' | 'fi'>({
+  legacy: false,
   locale: 'fi',
   fallbackLocale: 'en',
   messages: {

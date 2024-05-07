@@ -21,6 +21,8 @@ function openDialog(): void {
 function confirmRating(): void {
   contestant.value.rating = stars.value
 }
+
+const zeroPad = (num: number, places: number) => String(num).padStart(places, '0')
 </script>
 
 <template>
@@ -32,21 +34,48 @@ function confirmRating(): void {
       class="text-white"
       style="background: linear-gradient(to right, #3f1c71, #9c27b0)"
     >
-      <QItem class="text-h5 vertical-middle">
-        <QItemSection>{{ contestant.order }}</QItemSection>
+      <QItem class="text-h5">
+        <QItemSection avatar>
+          {{ zeroPad(contestant.order, 2) }}
+        </QItemSection>
         <QItemSection>
-          <div>
-            <CountryFlag
-              :country="contestant.country.toUpperCase()"
-              size="normal"
+          <QItemLabel lines="1">
+            <span class="q-pr-md">
+              <CountryFlag
+                :country="contestant.country.toUpperCase()"
+                size="normal"
+                style="margin-bottom: -11px"
+              />
+            </span>
+            {{ $t(`countries.${contestant.country}`) }}
+          </QItemLabel>
+        </QItemSection>
+        <QSpace />
+        <QItemSection
+          avatar
+          side
+        >
+          <QBtn
+            v-if="contestant.rating"
+            rounded
+            color="yellow"
+            text-color="black"
+            dense
+          >
+            <QIcon
+              left
+              name="star"
             />
-          </div>
-        </QItemSection>
-        <QItemSection>
-          {{ contestant.country.toUpperCase() }}
-        </QItemSection>
-        <QItemSection>
-          {{ contestant.rating }}
+            {{ contestant.rating }}
+          </QBtn>
+          <QBtn
+            v-else
+            rounded
+            color="orange"
+            text-color="black"
+            icon="star"
+          >
+          </QBtn>
         </QItemSection>
       </QItem>
     </QCardSection>
@@ -72,7 +101,7 @@ function confirmRating(): void {
               :country="contestant.country.toUpperCase()"
               size="big"
             />
-            {{ contestant.country }}
+            {{ $t(`countries.${contestant.country}`) }}
           </p>
         </div>
       </QCardSection>
@@ -80,13 +109,32 @@ function confirmRating(): void {
         <div class="row text-h6">
           <p>{{ contestant.artist }} - {{ contestant.song }}</p>
         </div>
-        <div class="row">
+        <div
+          v-if="canRate"
+          class="row"
+        >
           <QRating
-            v-if="canRate"
             v-model="stars"
-            :max="5"
-            size="32px"
+            max="5"
+            size="4em"
+            color="yellow"
+            icon="star_border"
+            icon-selected="star"
+            icon-half="star_half"
+            readonly
           />
+          <QSlider
+            v-model="stars"
+            class="q-mb-xl"
+            color="yellow"
+            :thumb-color="stars === 0 ? 'grey' : 'yellow'"
+            snap
+            :min="0"
+            :max="5"
+            :step="0.5"
+            thu
+          >
+          </QSlider>
         </div>
       </QCardSection>
 
