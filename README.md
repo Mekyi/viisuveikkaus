@@ -1,4 +1,11 @@
-# Song Contest Rating (WIP)
+# Viisuveikkaus
+
+> [!NOTE]
+> This project is currently in development
+
+"Viisuveikkaus" is a web application for rating Eurovision Song Contest entries and predicting their placement.
+
+The app is built with Vue 3.
 
 ## Recommended IDE Setup
 
