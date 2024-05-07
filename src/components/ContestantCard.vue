@@ -43,7 +43,7 @@ function confirmRating(): void {
           </div>
         </QItemSection>
         <QItemSection>
-          {{ contestant.country.toUpperCase() }}
+          {{ $t(`countries.${contestant.country}`) }}
         </QItemSection>
         <QItemSection>
           {{ contestant.rating }}
@@ -72,7 +72,7 @@ function confirmRating(): void {
               :country="contestant.country.toUpperCase()"
               size="big"
             />
-            {{ contestant.country }}
+            {{ $t(`countries.${contestant.country}`) }}
           </p>
         </div>
       </QCardSection>

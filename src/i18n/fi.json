@@ -12,6 +12,37 @@
     "title": "Veikkaus"
   },
   "countries": {
-    "title": "Maat"
+    "title": "Maat",
+    "CY": "Kypros",
+    "RS": "Serbia",
+    "LT": "Liettua",
+    "IE": "Irlanti",
+    "UA": "Ukraina",
+    "PL": "Puola",
+    "HR": "Kroatia",
+    "IS": "Islanti",
+    "SI": "Slovenia",
+    "FI": "Suomi",
+    "MD": "Moldova",
+    "AZ": "Azerbaidžan",
+    "AU": "Australia",
+    "PT": "Portugali",
+    "LU": "Luxemburg",
+    "MT": "Malta",
+    "AL": "Albania",
+    "GR": "Kreikka",
+    "CH": "Sveitsi",
+    "CZ": "Tšekki",
+    "AT": "Itävalta",
+    "DK": "Tanska",
+    "AM": "Armenia",
+    "LV": "Latvia",
+    "SM": "San Marino",
+    "GE": "Georgia",
+    "BE": "Belgia",
+    "EE": "Viro",
+    "IL": "Israel",
+    "NO": "Norja",
+    "NL": "Alankomaat"
   }
 }
