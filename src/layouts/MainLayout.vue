@@ -110,7 +110,9 @@ function selectShow(showFormat: ShowFormat) {
           />
         </QToolbar>
         <QSeparator />
+        <QItemSection> </QItemSection>
         <QList>
+          <QItemLabel header>{{ contestsStore.selectedYear }}</QItemLabel>
           <QItem
             v-for="show in contestsStore.availableShows"
             :key="show.showType"
