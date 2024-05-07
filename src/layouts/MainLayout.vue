@@ -23,8 +23,8 @@ function clearContestStorage() {
           @click="toggleSideMenu = !toggleSideMenu"
         />
         <QToolbarTitle>
-          {{ $t('title') }} {{ contestsStore.selectedYear }} -
-          {{ contestsStore.selectedShow }}
+          {{ contestsStore.selectedYear }} -
+          {{ $t(`showType[${contestsStore.selectedShow}]`) }}
         </QToolbarTitle>
         <QBtn
           flat
@@ -74,7 +74,9 @@ function clearContestStorage() {
             clickable
             @click="contestsStore.selectedShow = show.showType"
           >
-            <QItemSection>{{ show.showType }} - {{ show.date }}</QItemSection>
+            <QItemSection>
+              {{ $t(`showType[${contestsStore.selectedShow}]`) }} - {{ show.date }}
+            </QItemSection>
           </QItem>
         </QList>
       </QScrollArea>
@@ -95,10 +97,6 @@ function clearContestStorage() {
         <QRouteTab
           to="/prediction"
           :label="$t('prediction.title')"
-        />
-        <QRouteTab
-          to="/countries"
-          :label="$t('countries.title')"
         />
       </QTabs>
     </QFooter>

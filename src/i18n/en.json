@@ -4,6 +4,11 @@
     "confirm": "Confirm",
     "clear": "Clear"
   },
+  "showType": {
+    "1": "Semi-final 1",
+    "2": "Semi-final 2",
+    "3": "Final"
+  },
   "rating": {
     "title": "Rating",
     "rateHint": "Rate the performance"
