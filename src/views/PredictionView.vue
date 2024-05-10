@@ -1,30 +1,66 @@
 <script setup lang="ts">
-import ContestantCard from '@/components/ContestantCard.vue'
 import { useContestsStore } from '@/stores/contests'
-import { type Contestant } from '@/ts/types/contestant'
+import { usePredictionStore } from '@/stores/prediction'
+import type { Contestant } from '@/ts/types/contestant'
 import { onMounted, ref } from 'vue'
 import draggable from 'vuedraggable'
+import ContestantCard from '@/components/ContestantCard.vue'
 
-const dragList = ref<Contestant[] | undefined>()
 const contestsStore = useContestsStore()
-const drag = ref(false)
+const predictionStore = usePredictionStore()
+const dragList = ref<Contestant[] | undefined>([])
 
 onMounted(() => {
-  dragList.value = contestsStore.availableShows.find(
+  const contestants = contestsStore.availableShows.find(
     (show) => show.showType === contestsStore.selectedShow
-  )?.contestants
+  )?.contestants as Contestant[] | undefined
+
+  dragList.value = JSON.parse(JSON.stringify(contestants))
+  dragList.value?.sort((a, b) => {
+    if (a.predictedPlacement == undefined) {
+      return 1
+    }
+
+    if (b.predictedPlacement == undefined) {
+      return -1
+    }
+
+    return a.predictedPlacement - b.predictedPlacement
+  })
 })
+
+function onSorted() {
+  if (dragList.value == undefined) {
+    return
+  }
+
+  for (let index = 0; index < dragList.value.length; index++) {
+    const element = dragList.value[index]
+
+    predictionStore.setPlacementPrediction(element.country, index)
+  }
+}
 </script>
 
 <template>
-  <draggable
-    :list="dragList"
-    item-key="country"
-    @start="drag = true"
-    @end="drag = false"
-  >
-    <template #item="{ element }">
-      <ContestantCard :contestant="element" />
-    </template>
-  </draggable>
+  <div class="row">
+    <draggable
+      tag="ol"
+      :list="dragList"
+      class="list-group"
+      handle=".handle"
+      item-key="country"
+      @sort="onSorted"
+    >
+      <template #item="{ element }">
+        <li>
+          <ContestantCard
+            :contestant="element"
+            :can-rate="false"
+            :drag-item="true"
+          />
+        </li>
+      </template>
+    </draggable>
+  </div>
 </template>

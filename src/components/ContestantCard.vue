@@ -6,6 +6,7 @@ import CountryFlag from 'vue-country-flag-next'
 const props = defineProps<{
   contestant: Contestant
   canRate?: boolean | undefined
+  dragItem?: boolean | undefined
 }>()
 
 const { contestant, canRate } = toRefs(props)
@@ -35,7 +36,21 @@ const zeroPad = (num: number, places: number) => String(num).padStart(places, '0
       style="background: linear-gradient(to right, #3f1c71, #9c27b0)"
     >
       <QItem class="text-h5">
-        <QItemSection avatar>
+        <QItemSection
+          v-if="dragItem"
+          avatar
+          class="handle"
+        >
+          <QIcon
+            name="drag_handle"
+            size="1.4em"
+            color="grey"
+          />
+        </QItemSection>
+        <QItemSection
+          v-else
+          avatar
+        >
           {{ zeroPad(contestant.order, 2) }}
         </QItemSection>
         <QItemSection>
@@ -84,7 +99,12 @@ const zeroPad = (num: number, places: number) => String(num).padStart(places, '0
   <QDialog v-model="dialogToggle">
     <QCard>
       <QCardSection class="row items-center q-pb-none">
-        <div class="text-h6">{{ $t('rating.rateHint') }}</div>
+        <div
+          v-if="canRate"
+          class="text-h6"
+        >
+          {{ $t('rating.rateHint') }}
+        </div>
         <QSpace />
         <QBtn
           v-close-popup
