@@ -4,9 +4,6 @@ import { useContestsStore } from './contests'
 export const usePredictionStore = defineStore('prediction', () => {
   const contestsStore = useContestsStore()
 
-  const topListLength = 10
-  const lastListLength = 2
-
   function setPlacementPrediction(code: string, predictedPlacement: number) {
     const foundContest = contestsStore.contests?.find(
       (contest) => contest.year === contestsStore.selectedYear
@@ -55,5 +52,5 @@ export const usePredictionStore = defineStore('prediction', () => {
   //   return foundContest.shows
   // })
 
-  return { topListLength, lastListLength, setPlacementPrediction }
+  return { setPlacementPrediction }
 })

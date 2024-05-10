@@ -1,43 +1,65 @@
 <script setup lang="ts">
-// import ContestantCard from '@/components/ContestantCard.vue'
-import PlacementSelection from '@/components/PlacementSelection.vue'
-// import { useContestsStore } from '@/stores/contests'
+import { useContestsStore } from '@/stores/contests'
 import { usePredictionStore } from '@/stores/prediction'
-// import { type Contestant } from '@/ts/types/contestant'
+import type { Contestant } from '@/ts/types/contestant'
 import { onMounted, ref } from 'vue'
 import draggable from 'vuedraggable'
+import ContestantCard from '@/components/ContestantCard.vue'
 
-// const dragList = ref<Contestant[] | undefined>()
-
-// const contestsStore = useContestsStore()
+const contestsStore = useContestsStore()
 const predictionStore = usePredictionStore()
-const drag = ref(false)
-const test = ref<Object[]>([])
+const dragList = ref<Contestant[] | undefined>([])
 
 onMounted(() => {
-  for (let index = 0; index < predictionStore.topListLength; index++) {
-    test.value.push({ id: index })
-  }
+  const contestants = contestsStore.availableShows.find(
+    (show) => show.showType === contestsStore.selectedShow
+  )?.contestants as Contestant[] | undefined
+
+  dragList.value = JSON.parse(JSON.stringify(contestants))
+  dragList.value?.sort((a, b) => {
+    if (a.predictedPlacement == undefined) {
+      return 1
+    }
+
+    if (b.predictedPlacement == undefined) {
+      return -1
+    }
+
+    return a.predictedPlacement - b.predictedPlacement
+  })
 })
 
-// onMounted(() => {
-//   dragList.value = contestsStore.availableShows.find(
-//     (show) => show.showType === contestsStore.selectedShow
-//   )?.contestants
-// })
+function onSorted() {
+  if (dragList.value == undefined) {
+    return
+  }
+
+  for (let index = 0; index < dragList.value.length; index++) {
+    const element = dragList.value[index]
+
+    predictionStore.setPlacementPrediction(element.country, index)
+  }
+}
 </script>
 
 <template>
-  <div>
-    <h1>{{ `TOP-${predictionStore.topListLength}` }}</h1>
+  <div class="row">
     <draggable
-      :list="test"
+      tag="ol"
+      :list="dragList"
+      class="list-group"
+      handle=".handle"
       item-key="country"
-      @start="drag = true"
-      @end="drag = false"
+      @sort="onSorted"
     >
       <template #item="{ element }">
-        <PlacementSelection :predicted-placement="element.id" />
+        <li>
+          <ContestantCard
+            :contestant="element"
+            :can-rate="false"
+            :drag-item="true"
+          />
+        </li>
       </template>
     </draggable>
   </div>
