@@ -1,11 +1,11 @@
 {
-  "name": "song-contest-rating",
+  "name": "viisuveikkaus",
   "version": "0.0.0",
   "private": true,
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Mekyi/song-contest-rating.git"
+    "url": "https://github.com/Mekyi/viisuveikkaus.git"
   },
   "scripts": {
     "dev": "vite --host",

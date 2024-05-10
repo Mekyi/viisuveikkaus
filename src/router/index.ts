@@ -4,6 +4,8 @@ import RatingView from '@/views/RatingView.vue'
 import PredictionView from '@/views/PredictionView.vue'
 import CountriesView from '@/views/CountriesView.vue'
 
+const DEFAULT_TITLE = 'Viisuveikkaus'
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -17,6 +19,10 @@ const router = createRouter({
       ]
     }
   ]
+})
+
+router.afterEach(() => {
+  document.title = DEFAULT_TITLE
 })
 
 export default router

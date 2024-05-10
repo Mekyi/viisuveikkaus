@@ -6,9 +6,9 @@ import { computed, ref } from 'vue'
 import { useStorage } from '@vueuse/core'
 
 export const useContestsStore = defineStore('contests', () => {
-  const contests = useStorage<Contest[] | null>('contests', contestsData, localStorage)
+  const contests = useStorage<Contest[] | null>('contestsLocal', contestsData, localStorage)
   const selectedYear = ref<number>(2024)
-  const selectedShow = ref<ShowFormat>(ShowFormat.FirstSemiFinal)
+  const selectedShow = ref<ShowFormat | null>(ShowFormat.FirstSemiFinal)
 
   const contestants = computed(() => {
     const foundContest = contests.value?.find((contest) => contest.year === selectedYear.value)
@@ -32,6 +32,24 @@ export const useContestsStore = defineStore('contests', () => {
 
     return foundContest.shows
   })
+
+  const getDefaultShow = computed(() => {
+    const currentDate = Date.now()
+
+    if (availableShows.value.length < 1) {
+      return 1
+    }
+
+    // Compare contest shows and get the latest show in the past
+    return availableShows.value.reduce((latestShow, currentShow) => {
+      return Date.parse(currentShow.date) > Date.parse(latestShow.date) &&
+        Date.parse(currentShow.date) <= currentDate
+        ? currentShow
+        : latestShow
+    }).showType
+  })
+
+  selectedShow.value = getDefaultShow.value
 
   return { contests, selectedYear, selectedShow, getContestants: contestants, availableShows }
 })

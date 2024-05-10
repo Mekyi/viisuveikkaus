@@ -5,6 +5,15 @@ import vue from '@vitejs/plugin-vue'
 import VueDevTools from 'vite-plugin-vue-devtools'
 import { quasar, transformAssetUrls } from '@quasar/vite-plugin'
 
+const htmlPlugin = () => {
+  return {
+    name: 'html-transform',
+    transformIndexHtml(html: any) {
+      return html.replace(/<title>(.*?)<\/title>/, `<title>Viisuveikkaus</title>`)
+    }
+  }
+}
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -18,12 +27,13 @@ export default defineConfig({
     quasar({
       sassVariables: 'src/styles/quasar-variables.sass',
       autoImportComponentCase: 'pascal'
-    })
+    }),
+    htmlPlugin()
   ],
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   },
-  base: '/song-contest-rating/'
+  base: '/viisuveikkaus/'
 })

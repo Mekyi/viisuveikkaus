@@ -10,7 +10,6 @@ installQuasarPlugin()
 describe('MainLayout.vue', () => {
   it('has nested RouterView', () => {
     const wrapper = createWrapper(MainLayout)
-
     expect(wrapper.findComponent(RouterView).exists()).toBe(true)
   })
 })

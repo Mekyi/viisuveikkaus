@@ -2,7 +2,12 @@
   "title": "Viisuveikkaus",
   "common": {
     "confirm": "Confirm",
-    "clear": "Clear"
+    "clear": "Clear inputs"
+  },
+  "showType": {
+    "1": "Semi-final 1",
+    "2": "Semi-final 2",
+    "3": "Final"
   },
   "rating": {
     "title": "Rating",
@@ -12,6 +17,43 @@
     "title": "Prediction"
   },
   "countries": {
-    "title": "Countries"
+    "title": "Countries",
+    "CY": "Cyprus",
+    "RS": "Serbia",
+    "LT": "Lithuania",
+    "IE": "Ireland",
+    "UA": "Ukraine",
+    "PL": "Poland",
+    "HR": "Croatia",
+    "IS": "Iceland",
+    "SI": "Slovenia",
+    "FI": "Finland",
+    "MD": "Moldova",
+    "AZ": "Azerbaijan",
+    "AU": "Australia",
+    "PT": "Portugal",
+    "LU": "Luxembourg",
+    "MT": "Malta",
+    "AL": "Albania",
+    "GR": "Greece",
+    "CH": "Switzerland",
+    "CZ": "Czech Republic",
+    "AT": "Austria",
+    "DK": "Denmark",
+    "AM": "Armenia",
+    "LV": "Latvia",
+    "SM": "San Marino",
+    "GE": "Georgia",
+    "BE": "Belgium",
+    "EE": "Estonia",
+    "IL": "Israel",
+    "NO": "Norway",
+    "NL": "Netherlands",
+    "SE": "Sweden",
+    "DE": "Germany",
+    "ES": "Spain",
+    "GB": "United Kingdom",
+    "IT": "Italy",
+    "FR": "France"
   }
 }
