@@ -4,6 +4,7 @@ import { ref, watch } from 'vue'
 import logoUrl from '@/assets/logo.svg'
 import { useI18n } from 'vue-i18n'
 import type ShowFormat from '@/ts/enums/showFormat'
+import router from '@/router'
 
 const toggleSideMenu = ref(false)
 const contestsStore = useContestsStore()
@@ -27,6 +28,7 @@ function clearContestStorage() {
 function selectShow(showFormat: ShowFormat) {
   contestsStore.selectedShow = showFormat
   toggleSideMenu.value = false
+  router.push('rating')
 }
 </script>
 
@@ -42,8 +44,13 @@ function selectShow(showFormat: ShowFormat) {
           class="q-mr-sm"
           @click="toggleSideMenu = !toggleSideMenu"
         />
-        <QToolbarTitle style="font-size: 18px">
-          {{ $t('title') }}
+        <QAvatar square>
+          <img
+            :src="logoUrl"
+            alt="Viisuveikkaus"
+          />
+        </QAvatar>
+        <QToolbarTitle class="text-h6">
           {{ contestsStore.selectedYear }} -
           {{ $t(`showType[${contestsStore.selectedShow}]`) }}
         </QToolbarTitle>
@@ -98,7 +105,7 @@ function selectShow(showFormat: ShowFormat) {
           <QAvatar square>
             <img :src="logoUrl" />
           </QAvatar>
-          <QToolbarTitle class="text-h5">
+          <QToolbarTitle class="text-h6">
             {{ $t('title') }}
           </QToolbarTitle>
           <QBtn

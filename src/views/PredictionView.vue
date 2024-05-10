@@ -9,6 +9,7 @@ import ContestantCard from '@/components/ContestantCard.vue'
 const contestsStore = useContestsStore()
 const predictionStore = usePredictionStore()
 const dragList = ref<Contestant[] | undefined>([])
+const isDragging = ref(false)
 
 onMounted(() => {
   const contestants = contestsStore.availableShows.find(
@@ -40,27 +41,40 @@ function onSorted() {
     predictionStore.setPlacementPrediction(element.country, index)
   }
 }
+
+function dragOptions() {
+  return {
+    animation: 200,
+    group: 'description',
+    disabled: false,
+    ghostClass: 'ghost'
+  }
+}
 </script>
 
 <template>
-  <div class="row">
-    <draggable
-      tag="ol"
-      :list="dragList"
-      class="list-group"
-      handle=".handle"
-      item-key="country"
-      @sort="onSorted"
-    >
-      <template #item="{ element }">
-        <li>
+  <draggable
+    :list="dragList"
+    class="list-group"
+    handle=".handle"
+    item-key="country"
+    v-bind="dragOptions"
+    @start="isDragging = true"
+    @end="isDragging = false"
+    @sort="onSorted"
+  >
+    <template #item="{ element, index }">
+      <div class="row items-center">
+        <div class="col-1 text-h6 q-mx-sm">{{ index + 1 }}.</div>
+        <div class="col">
           <ContestantCard
             :contestant="element"
             :can-rate="false"
             :drag-item="true"
+            :drag-index="index"
           />
-        </li>
-      </template>
-    </draggable>
-  </div>
+        </div>
+      </div>
+    </template>
+  </draggable>
 </template>

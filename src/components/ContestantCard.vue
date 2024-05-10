@@ -7,6 +7,7 @@ const props = defineProps<{
   contestant: Contestant
   canRate?: boolean | undefined
   dragItem?: boolean | undefined
+  dragIndex?: number | undefined
 }>()
 
 const { contestant, canRate } = toRefs(props)
@@ -28,70 +29,55 @@ const zeroPad = (num: number, places: number) => String(num).padStart(places, '0
 
 <template>
   <QCard
-    class="q-my-md"
+    :class="dragItem ? `q-my-sm` : `q-my-md`"
     @click="openDialog"
   >
     <QCardSection
-      class="text-white"
+      :class="dragItem ? 'q-pa-none' : 'q-pa-sm'"
       style="background: linear-gradient(to right, #3f1c71, #9c27b0)"
     >
-      <QItem class="text-h5">
+      <QItem class="items-center justify-start">
         <QItemSection
           v-if="dragItem"
           avatar
-          class="handle"
+          class="handle col-1"
         >
           <QIcon
             name="drag_handle"
-            size="1.4em"
+            size="1.8em"
             color="grey"
           />
         </QItemSection>
         <QItemSection
           v-else
           avatar
+          class="text-h6 col-1"
         >
           {{ zeroPad(contestant.order, 2) }}
         </QItemSection>
+        <QItemSection class="col-2">
+          <CountryFlag
+            :country="contestant.country.toUpperCase()"
+            size="normal"
+            style="font-size: 0px"
+          />
+        </QItemSection>
         <QItemSection>
-          <QItemLabel lines="1">
-            <span class="q-pr-md">
-              <CountryFlag
-                :country="contestant.country.toUpperCase()"
-                size="normal"
-                style="margin-bottom: -11px"
-              />
-            </span>
+          <QItemLabel
+            lines="1"
+            class="text-h6"
+          >
             {{ $t(`countries.${contestant.country}`) }}
           </QItemLabel>
         </QItemSection>
-        <QSpace />
-        <QItemSection
-          avatar
-          side
+        <QChip
+          v-if="contestant.rating"
+          dense
+          color="orange"
+          icon="star"
         >
-          <QBtn
-            v-if="contestant.rating"
-            rounded
-            color="yellow"
-            text-color="black"
-            dense
-          >
-            <QIcon
-              left
-              name="star"
-            />
-            {{ contestant.rating }}
-          </QBtn>
-          <QBtn
-            v-else
-            rounded
-            color="orange"
-            text-color="black"
-            icon="star"
-          >
-          </QBtn>
-        </QItemSection>
+          {{ contestant.rating.toFixed(1) }}
+        </QChip>
       </QItem>
     </QCardSection>
   </QCard>
@@ -136,7 +122,7 @@ const zeroPad = (num: number, places: number) => String(num).padStart(places, '0
           <QRating
             v-model="stars"
             max="5"
-            size="4em"
+            size="xl"
             color="yellow"
             icon="star_border"
             icon-selected="star"
