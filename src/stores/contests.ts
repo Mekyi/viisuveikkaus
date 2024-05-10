@@ -6,7 +6,7 @@ import { computed, ref } from 'vue'
 import { useStorage } from '@vueuse/core'
 
 export const useContestsStore = defineStore('contests', () => {
-  const contests = useStorage<Contest[] | null>('contests', contestsData, localStorage)
+  const contests = useStorage<Contest[] | null>('contestsLocal', contestsData, localStorage)
   const selectedYear = ref<number>(2024)
   const selectedShow = ref<ShowFormat | null>(ShowFormat.FirstSemiFinal)
 

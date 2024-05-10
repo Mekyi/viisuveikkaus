@@ -48,6 +48,12 @@
     "EE": "Estonia",
     "IL": "Israel",
     "NO": "Norway",
-    "NL": "Netherlands"
+    "NL": "Netherlands",
+    "SE": "Sweden",
+    "DE": "Germany",
+    "ES": "Spain",
+    "GB": "United Kingdom",
+    "IT": "Italy",
+    "FR": "France"
   }
 }

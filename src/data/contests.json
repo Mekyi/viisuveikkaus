@@ -203,7 +203,164 @@
       {
         "date": "2024-05-11",
         "showType": 3,
-        "contestants": []
+        "contestants": [
+          {
+            "country": "SE",
+            "order": 1,
+            "artist": "Marcus & Martinus",
+            "song": "Unforgettable"
+          },
+          {
+            "country": "UA",
+            "order": 2,
+            "artist": "Alyona Alyona and Jerry Heil",
+            "song": "Teresa & Maria"
+          },
+          {
+            "country": "DE",
+            "order": 3,
+            "artist": "Isaak",
+            "song": "Always on the Run"
+          },
+          {
+            "country": "LU",
+            "order": 4,
+            "artist": "Tali",
+            "song": "Fighter"
+          },
+          {
+            "country": "NL",
+            "order": 5,
+            "artist": "Joost Klein",
+            "song": "Europapa"
+          },
+          {
+            "country": "IL",
+            "order": 6,
+            "artist": "Eden Golan",
+            "song": "Hurricane"
+          },
+          {
+            "country": "LT",
+            "order": 7,
+            "artist": "Silvester Belt",
+            "song": "Luktelk"
+          },
+          {
+            "country": "ES",
+            "order": 8,
+            "artist": "Nebulossa",
+            "song": "Zorra"
+          },
+          {
+            "country": "EE",
+            "order": 9,
+            "artist": "5miinust and Puuluup",
+            "song": "(Nendest) narkootikumidest ei tea me (küll) midagi"
+          },
+          {
+            "country": "IE",
+            "order": 10,
+            "artist": "Bambie Thug",
+            "song": "Doomsday Blue"
+          },
+          {
+            "country": "LV",
+            "order": 11,
+            "artist": "Dons",
+            "song": "Hollow"
+          },
+          {
+            "country": "GR",
+            "order": 12,
+            "artist": "Marina Satti",
+            "song": "Zari"
+          },
+          {
+            "country": "GB",
+            "order": 13,
+            "artist": "Olly Alexander",
+            "song": "Dizzy"
+          },
+          {
+            "country": "NO",
+            "order": 14,
+            "artist": "Gåte",
+            "song": "Ulveham"
+          },
+          {
+            "country": "IT",
+            "order": 15,
+            "artist": "Angelina Mango",
+            "song": "La noia"
+          },
+          {
+            "country": "RS",
+            "order": 16,
+            "artist": "Teya Dora",
+            "song": "Ramonda"
+          },
+          {
+            "country": "FI",
+            "order": 17,
+            "artist": "Windows95man[c]",
+            "song": "No Rules!"
+          },
+          {
+            "country": "PT",
+            "order": 18,
+            "artist": "Iolanda",
+            "song": "Grito"
+          },
+          {
+            "country": "AM",
+            "order": 19,
+            "artist": "Ladaniva",
+            "song": "Jako"
+          },
+          {
+            "country": "CY",
+            "order": 20,
+            "artist": "Silia Kapsis",
+            "song": "Liar"
+          },
+          {
+            "country": "CH",
+            "order": 21,
+            "artist": "Nemo",
+            "song": "The country"
+          },
+          {
+            "country": "SI",
+            "order": 22,
+            "artist": "Raiven",
+            "song": "Veronika"
+          },
+          {
+            "country": "HR",
+            "order": 23,
+            "artist": "Baby Lasagna",
+            "song": "Rim Tim Tagi Dim"
+          },
+          {
+            "country": "GE",
+            "order": 24,
+            "artist": "Nutsa Buzaladze",
+            "song": "Firefighter"
+          },
+          {
+            "country": "FR",
+            "order": 25,
+            "artist": "Slimane",
+            "song": "Mon amour"
+          },
+          {
+            "country": "AT",
+            "order": 26,
+            "artist": "Kaleen",
+            "song": "We Will Rave"
+          }
+        ]
       }
     ]
   }

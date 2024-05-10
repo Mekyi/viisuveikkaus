@@ -48,6 +48,12 @@
     "EE": "Viro",
     "IL": "Israel",
     "NO": "Norja",
-    "NL": "Alankomaat"
+    "NL": "Alankomaat",
+    "SW": "Ruotsi",
+    "DE": "Saksa",
+    "ES": "Espanja",
+    "GB": "Yhdistynyt kuningaskunta",
+    "IT": "Italia",
+    "FR": "Ranska"
   }
 }
