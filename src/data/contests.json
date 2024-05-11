@@ -229,134 +229,128 @@
             "song": "Fighter"
           },
           {
-            "country": "NL",
-            "order": 5,
-            "artist": "Joost Klein",
-            "song": "Europapa"
-          },
-          {
             "country": "IL",
-            "order": 6,
+            "order": 5,
             "artist": "Eden Golan",
             "song": "Hurricane"
           },
           {
             "country": "LT",
-            "order": 7,
+            "order": 6,
             "artist": "Silvester Belt",
             "song": "Luktelk"
           },
           {
             "country": "ES",
-            "order": 8,
+            "order": 7,
             "artist": "Nebulossa",
             "song": "Zorra"
           },
           {
             "country": "EE",
-            "order": 9,
+            "order": 8,
             "artist": "5miinust and Puuluup",
             "song": "(Nendest) narkootikumidest ei tea me (küll) midagi"
           },
           {
             "country": "IE",
-            "order": 10,
+            "order": 9,
             "artist": "Bambie Thug",
             "song": "Doomsday Blue"
           },
           {
             "country": "LV",
-            "order": 11,
+            "order": 10,
             "artist": "Dons",
             "song": "Hollow"
           },
           {
             "country": "GR",
-            "order": 12,
+            "order": 11,
             "artist": "Marina Satti",
             "song": "Zari"
           },
           {
             "country": "GB",
-            "order": 13,
+            "order": 12,
             "artist": "Olly Alexander",
             "song": "Dizzy"
           },
           {
             "country": "NO",
-            "order": 14,
+            "order": 13,
             "artist": "Gåte",
             "song": "Ulveham"
           },
           {
             "country": "IT",
-            "order": 15,
+            "order": 14,
             "artist": "Angelina Mango",
             "song": "La noia"
           },
           {
             "country": "RS",
-            "order": 16,
+            "order": 15,
             "artist": "Teya Dora",
             "song": "Ramonda"
           },
           {
             "country": "FI",
-            "order": 17,
+            "order": 16,
             "artist": "Windows95man[c]",
             "song": "No Rules!"
           },
           {
             "country": "PT",
-            "order": 18,
+            "order": 17,
             "artist": "Iolanda",
             "song": "Grito"
           },
           {
             "country": "AM",
-            "order": 19,
+            "order": 18,
             "artist": "Ladaniva",
             "song": "Jako"
           },
           {
             "country": "CY",
-            "order": 20,
+            "order": 19,
             "artist": "Silia Kapsis",
             "song": "Liar"
           },
           {
             "country": "CH",
-            "order": 21,
+            "order": 20,
             "artist": "Nemo",
             "song": "The country"
           },
           {
             "country": "SI",
-            "order": 22,
+            "order": 21,
             "artist": "Raiven",
             "song": "Veronika"
           },
           {
             "country": "HR",
-            "order": 23,
+            "order": 22,
             "artist": "Baby Lasagna",
             "song": "Rim Tim Tagi Dim"
           },
           {
             "country": "GE",
-            "order": 24,
+            "order": 23,
             "artist": "Nutsa Buzaladze",
             "song": "Firefighter"
           },
           {
             "country": "FR",
-            "order": 25,
+            "order": 24,
             "artist": "Slimane",
             "song": "Mon amour"
           },
           {
             "country": "AT",
-            "order": 26,
+            "order": 25,
             "artist": "Kaleen",
             "song": "We Will Rave"
           }
