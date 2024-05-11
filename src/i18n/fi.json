@@ -2,7 +2,10 @@
   "title": "Viisuveikkaus",
   "common": {
     "confirm": "Vahvista",
-    "clear": "Tyhjennä syötteet"
+    "clear": "Tyhjennä syötteet",
+    "country": "Maa",
+    "artist": "Artisti",
+    "song": "Kappale"
   },
   "showType": {
     "1": "1. semifinaali",
@@ -11,7 +14,7 @@
   },
   "rating": {
     "title": "Arviointi",
-    "rateHint": "Arvostele esitys"
+    "rateHint": "Esitys"
   },
   "prediction": {
     "title": "Veikkaus"

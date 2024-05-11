@@ -4,6 +4,7 @@ import { ref, watch } from 'vue'
 import logoUrl from '@/assets/logo.svg'
 import { useI18n } from 'vue-i18n'
 import type ShowFormat from '@/ts/enums/showFormat'
+import router from '@/router'
 
 const toggleSideMenu = ref(false)
 const contestsStore = useContestsStore()
@@ -27,13 +28,14 @@ function clearContestStorage() {
 function selectShow(showFormat: ShowFormat) {
   contestsStore.selectedShow = showFormat
   toggleSideMenu.value = false
+  router.push('rating')
 }
 </script>
 
 <template>
   <QLayout view="hHh Lpr lFf">
     <QHeader elevated>
-      <QToolbar>
+      <QToolbar class="animated-nav-gradient">
         <QBtn
           flat
           round
@@ -42,8 +44,13 @@ function selectShow(showFormat: ShowFormat) {
           class="q-mr-sm"
           @click="toggleSideMenu = !toggleSideMenu"
         />
-        <QToolbarTitle style="font-size: 18px">
-          {{ $t('title') }}
+        <QAvatar square>
+          <img
+            :src="logoUrl"
+            alt="Viisuveikkaus"
+          />
+        </QAvatar>
+        <QToolbarTitle class="text-h6">
           {{ contestsStore.selectedYear }} -
           {{ $t(`showType[${contestsStore.selectedShow}]`) }}
         </QToolbarTitle>
@@ -92,13 +99,14 @@ function selectShow(showFormat: ShowFormat) {
       :breakpoint="800"
       bordered
       overlay
+      class="bg-purple-9"
     >
       <QScrollArea class="fit">
-        <QToolbar class="bg-primary">
+        <QToolbar class="animated-nav-gradient">
           <QAvatar square>
             <img :src="logoUrl" />
           </QAvatar>
-          <QToolbarTitle class="text-h5">
+          <QToolbarTitle class="text-h6">
             {{ $t('title') }}
           </QToolbarTitle>
           <QBtn
@@ -140,7 +148,7 @@ function selectShow(showFormat: ShowFormat) {
     </QPageContainer>
 
     <QFooter elevated>
-      <QTabs>
+      <QTabs class="bg-amber-9">
         <QRouteTab
           to="/rating"
           :label="$t('rating.title')"
@@ -153,3 +161,21 @@ function selectShow(showFormat: ShowFormat) {
     </QFooter>
   </QLayout>
 </template>
+
+<style>
+.animated-nav-gradient {
+  animation: animateBg 5s infinite linear;
+  background-color: #fff;
+  background-image: repeating-linear-gradient(90deg, #da3287, #ffde5e, #da3287, #ffde5e);
+  background-size: 300% 100%;
+  box-shadow: 0 3px 14px #000;
+}
+@keyframes animateBg {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+</style>
