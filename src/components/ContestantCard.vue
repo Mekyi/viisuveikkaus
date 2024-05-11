@@ -85,7 +85,10 @@ const zeroPad = (num: number, places: number) => String(num).padStart(places, '0
   </QCard>
 
   <QDialog v-model="dialogToggle">
-    <QCard style="width: 700px; max-width: 80vw">
+    <QCard
+      style="width: 700px; max-width: 80vw"
+      class="bg-purple-10"
+    >
       <QBar>
         {{ $t('rating.rateHint') }} #{{ zeroPad(contestant.order, 2) }}
         <QSpace />
@@ -151,8 +154,8 @@ const zeroPad = (num: number, places: number) => String(num).padStart(places, '0
         v-if="canRate"
         class="justify-center"
       >
+        <div class="text-center q-mx-auto">{{ $t('rating.title') }}</div>
         <div class="row">
-          <div class="q-mx-auto">{{ $t('rating.title') }}</div>
           <QRating
             v-model="stars"
             max="5"
@@ -190,7 +193,6 @@ const zeroPad = (num: number, places: number) => String(num).padStart(places, '0
         <QBtn
           v-close-popup
           flat
-          color="primary"
           :label="$t(`common.confirm`)"
           @click="confirmRating"
         />

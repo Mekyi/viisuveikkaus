@@ -35,7 +35,7 @@ function selectShow(showFormat: ShowFormat) {
 <template>
   <QLayout view="hHh Lpr lFf">
     <QHeader elevated>
-      <QToolbar>
+      <QToolbar class="animated-nav-gradient">
         <QBtn
           flat
           round
@@ -99,9 +99,10 @@ function selectShow(showFormat: ShowFormat) {
       :breakpoint="800"
       bordered
       overlay
+      class="bg-purple-9"
     >
       <QScrollArea class="fit">
-        <QToolbar class="bg-primary">
+        <QToolbar class="animated-nav-gradient">
           <QAvatar square>
             <img :src="logoUrl" />
           </QAvatar>
@@ -147,7 +148,7 @@ function selectShow(showFormat: ShowFormat) {
     </QPageContainer>
 
     <QFooter elevated>
-      <QTabs>
+      <QTabs class="bg-amber-9">
         <QRouteTab
           to="/rating"
           :label="$t('rating.title')"
@@ -160,3 +161,21 @@ function selectShow(showFormat: ShowFormat) {
     </QFooter>
   </QLayout>
 </template>
+
+<style>
+.animated-nav-gradient {
+  animation: animateBg 5s infinite linear;
+  background-color: #fff;
+  background-image: repeating-linear-gradient(90deg, #da3287, #ffde5e, #da3287, #ffde5e);
+  background-size: 300% 100%;
+  box-shadow: 0 3px 14px #000;
+}
+@keyframes animateBg {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+</style>
