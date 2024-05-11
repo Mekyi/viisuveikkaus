@@ -69,7 +69,7 @@ function dragOptions() {
         <div class="col">
           <ContestantCard
             :contestant="element"
-            :can-rate="false"
+            :can-rate="true"
             :drag-item="true"
             :drag-index="index"
           />

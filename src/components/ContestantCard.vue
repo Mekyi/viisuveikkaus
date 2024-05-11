@@ -13,10 +13,12 @@ const props = defineProps<{
 const { contestant, canRate } = toRefs(props)
 
 const dialogToggle = ref(false)
-const stars = ref()
+const stars = ref(0)
 
 function openDialog(): void {
-  stars.value = contestant.value.rating
+  if (contestant.value.rating != undefined) {
+    stars.value = contestant.value.rating
+  }
   dialogToggle.value = true
 }
 
@@ -71,7 +73,7 @@ const zeroPad = (num: number, places: number) => String(num).padStart(places, '0
           </QItemLabel>
         </QItemSection>
         <QChip
-          v-if="contestant.rating"
+          v-if="contestant.rating != undefined"
           dense
           color="orange"
           icon="star"
@@ -83,42 +85,74 @@ const zeroPad = (num: number, places: number) => String(num).padStart(places, '0
   </QCard>
 
   <QDialog v-model="dialogToggle">
-    <QCard>
-      <QCardSection class="row items-center q-pb-none">
-        <div
-          v-if="canRate"
-          class="text-h6"
-        >
-          {{ $t('rating.rateHint') }}
-        </div>
+    <QCard style="width: 700px; max-width: 80vw">
+      <QBar>
+        {{ $t('rating.rateHint') }} #{{ zeroPad(contestant.order, 2) }}
         <QSpace />
         <QBtn
           v-close-popup
           icon="close"
           flat
-          round
           dense
         />
-      </QCardSection>
+      </QBar>
       <QCardSection>
-        <div class="row row-wrap text-h3 items center">
-          <p>
-            <CountryFlag
-              :country="contestant.country.toUpperCase()"
-              size="big"
-            />
-            {{ $t(`countries.${contestant.country}`) }}
-          </p>
-        </div>
+        <QList>
+          <QItem>
+            <QItemSection avatar>
+              <QAvatar>
+                <QIcon name="flag" />
+              </QAvatar>
+            </QItemSection>
+            <QItemSection>
+              <QItemLabel caption>{{ $t('common.country') }}</QItemLabel>
+              <QItemLabel>
+                <CountryFlag
+                  :country="contestant.country.toUpperCase()"
+                  size="small"
+                  style="font-size: 16px"
+                />
+                {{ $t(`countries.${contestant.country}`) }}
+              </QItemLabel>
+            </QItemSection>
+          </QItem>
+          <QItem>
+            <QItemSection avatar>
+              <QAvatar>
+                <QIcon name="groups" />
+              </QAvatar>
+            </QItemSection>
+            <QItemSection>
+              <QItemLabel caption>{{ $t('common.artist') }}</QItemLabel>
+              <QItemLabel>
+                {{ contestant.artist }}
+              </QItemLabel>
+            </QItemSection>
+          </QItem>
+          <QItem>
+            <QItemSection avatar>
+              <QAvatar>
+                <QIcon name="music_note" />
+              </QAvatar>
+            </QItemSection>
+            <QItemSection>
+              <QItemLabel caption>{{ $t('common.song') }}</QItemLabel>
+              <QItemLabel>
+                {{ contestant.song }}
+              </QItemLabel>
+            </QItemSection>
+          </QItem>
+        </QList>
       </QCardSection>
-      <QCardSection>
-        <div class="row text-h6">
-          <p>{{ contestant.artist }} - {{ contestant.song }}</p>
-        </div>
-        <div
-          v-if="canRate"
-          class="row"
-        >
+
+      <QSeparator v-if="canRate" />
+
+      <QCardSection
+        v-if="canRate"
+        class="justify-center"
+      >
+        <div class="row">
+          <div class="q-mx-auto">{{ $t('rating.title') }}</div>
           <QRating
             v-model="stars"
             max="5"
@@ -128,27 +162,34 @@ const zeroPad = (num: number, places: number) => String(num).padStart(places, '0
             icon-selected="star"
             icon-half="star_half"
             readonly
+            class="q-mx-auto"
           />
+        </div>
+        <div class="row q-px-md">
           <QSlider
             v-model="stars"
-            class="q-mb-xl"
+            class="q-mb-md"
             color="yellow"
             :thumb-color="stars === 0 ? 'grey' : 'yellow'"
             snap
             :min="0"
             :max="5"
             :step="0.5"
-            thu
+            thumb-size="27px"
           >
           </QSlider>
         </div>
       </QCardSection>
 
-      <QSeparator />
+      <QSeparator v-if="canRate" />
 
-      <QCardActions align="right">
+      <QCardActions
+        v-if="canRate"
+        align="right"
+      >
         <QBtn
           v-close-popup
+          flat
           color="primary"
           :label="$t(`common.confirm`)"
           @click="confirmRating"

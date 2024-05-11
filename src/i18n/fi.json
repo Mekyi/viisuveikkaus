@@ -2,7 +2,10 @@
   "title": "Viisuveikkaus",
   "common": {
     "confirm": "Vahvista",
-    "clear": "Tyhjennä syötteet"
+    "clear": "Tyhjennä syötteet",
+    "country": "Maa",
+    "artist": "Artisti",
+    "song": "Kappale"
   },
   "showType": {
     "1": "1. semifinaali",

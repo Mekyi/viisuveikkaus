@@ -2,7 +2,10 @@
   "title": "Viisuveikkaus",
   "common": {
     "confirm": "Confirm",
-    "clear": "Clear inputs"
+    "clear": "Clear inputs",
+    "country": "Country",
+    "artist": "Artist",
+    "song": "Song"
   },
   "showType": {
     "1": "Semi-final 1",
@@ -11,7 +14,7 @@
   },
   "rating": {
     "title": "Rating",
-    "rateHint": "Rate the performance"
+    "rateHint": "Rate performance"
   },
   "prediction": {
     "title": "Prediction"
