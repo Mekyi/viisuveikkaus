@@ -1,5 +1,208 @@
 [
   {
+    "year": 2025,
+    "shows": [
+      {
+        "date": "2025-05-13",
+        "showType": 1,
+        "contestants": [
+          {
+            "country": "IS",
+            "order": 1,
+            "artist": "Væb",
+            "song": "Róa"
+          },
+          {
+            "country": "PL",
+            "order": 2,
+            "artist": "Justyna Steczkowska",
+            "song": "Gaja"
+          },
+          {
+            "country": "SI",
+            "order": 3,
+            "artist": "Klemen",
+            "song": "How Much Time Do We Have Left"
+          },
+          {
+            "country": "EE",
+            "order": 4,
+            "artist": "Tommy Cash",
+            "song": "Espresso Macchiato"
+          },
+          {
+            "country": "UA",
+            "order": 5,
+            "artist": "Ziferblat",
+            "song": "Bird of Pray"
+          },
+          {
+            "country": "SE",
+            "order": 6,
+            "artist": "KAJ",
+            "song": "Bara bada bastu"
+          },
+          {
+            "country": "PT",
+            "order": 7,
+            "artist": "Napa",
+            "song": "Deslocado"
+          },
+          {
+            "country": "NO",
+            "order": 8,
+            "artist": "Kyle Alessandro",
+            "song": "Lighter"
+          },
+          {
+            "country": "BE",
+            "order": 9,
+            "artist": "Red Sebastian",
+            "song": "Strobe Lights"
+          },
+          {
+            "country": "AZ",
+            "order": 10,
+            "artist": "Mamagama",
+            "song": "Run with U"
+          },
+          {
+            "country": "SM",
+            "order": 11,
+            "artist": "Gabry Ponte[f]",
+            "song": "Tutta l'Italia"
+          },
+          {
+            "country": "AL",
+            "order": 12,
+            "artist": "Shkodra Elektronike",
+            "song": "Zjerm"
+          },
+          {
+            "country": "NL",
+            "order": 13,
+            "artist": "Claude",
+            "song": "C'est la vie"
+          },
+          {
+            "country": "HR",
+            "order": 14,
+            "artist": "Marko Bošnjak",
+            "song": "Poison Cake"
+          },
+          {
+            "country": "CY",
+            "order": 15,
+            "artist": "Theo Evan",
+            "song": "Shh"
+          }
+        ]
+      },
+      {
+        "date": "2025-05-15",
+        "showType": 2,
+        "contestants": [
+          {
+            "country": "AU",
+            "order": 1,
+            "artist": "Go-Jo",
+            "song": "Milkshake Man"
+          },
+          {
+            "country": "ME",
+            "order": 2,
+            "artist": "Nina Žižić",
+            "song": "Dobrodošli"
+          },
+          {
+            "country": "IE",
+            "order": 3,
+            "artist": "Emmy",
+            "song": "Laika Party"
+          },
+          {
+            "country": "LV",
+            "order": 4,
+            "artist": "Tautumeitas",
+            "song": "Bur man laimi"
+          },
+          {
+            "country": "AM",
+            "order": 5,
+            "artist": "Parg",
+            "song": "Survivor"
+          },
+          {
+            "country": "AT",
+            "order": 6,
+            "artist": "JJ",
+            "song": "Wasted Love"
+          },
+          {
+            "country": "GR",
+            "order": 7,
+            "artist": "Klavdia",
+            "song": "Asteromata"
+          },
+          {
+            "country": "LT",
+            "order": 8,
+            "artist": "Katarsis",
+            "song": "Tavo akys"
+          },
+          {
+            "country": "MT",
+            "order": 9,
+            "artist": "Miriana Conte",
+            "song": "Serving"
+          },
+          {
+            "country": "GE",
+            "order": 10,
+            "artist": "Mariam Shengelia",
+            "song": "Freedom"
+          },
+          {
+            "country": "DK",
+            "order": 11,
+            "artist": "Sissal",
+            "song": "Hallucination"
+          },
+          {
+            "country": "CZ",
+            "order": 12,
+            "artist": "Adonxs",
+            "song": "Kiss Kiss Goodbye"
+          },
+          {
+            "country": "LU",
+            "order": 13,
+            "artist": "Laura Thorn",
+            "song": "La poupée monte le son"
+          },
+          {
+            "country": "IL",
+            "order": 14,
+            "artist": "Yuval Raphael",
+            "song": "New Day Will Rise"
+          },
+          {
+            "country": "RS",
+            "order": 15,
+            "artist": "Princ",
+            "song": "Mila"
+          },
+          {
+            "country": "FI",
+            "order": 16,
+            "artist": "Erika Vikman",
+            "song": "Ich komme"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "year": 2024,
     "shows": [
       {
