@@ -99,7 +99,7 @@ function selectShow(showFormat: ShowFormat) {
       :breakpoint="800"
       bordered
       overlay
-      class="bg-purple-9"
+      class="bg-black"
     >
       <QScrollArea class="fit">
         <QToolbar class="animated-nav-gradient">
@@ -148,7 +148,7 @@ function selectShow(showFormat: ShowFormat) {
     </QPageContainer>
 
     <QFooter elevated>
-      <QTabs class="bg-amber-9">
+      <QTabs class="bg-cyan-14">
         <QRouteTab
           to="/rating"
           :label="$t('rating.title')"
@@ -166,7 +166,7 @@ function selectShow(showFormat: ShowFormat) {
 .animated-nav-gradient {
   animation: animateBg 5s infinite linear;
   background-color: #fff;
-  background-image: repeating-linear-gradient(90deg, #da3287, #ffde5e, #da3287, #ffde5e);
+  background-image: repeating-linear-gradient(90deg, #fb41e4, #0bd9d4, #fb41e4, #0bd9d4);
   background-size: 300% 100%;
   box-shadow: 0 3px 14px #000;
 }
