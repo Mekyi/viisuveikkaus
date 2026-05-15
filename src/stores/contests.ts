@@ -7,8 +7,8 @@ import { useStorage } from '@vueuse/core'
 
 export const useContestsStore = defineStore('contests', () => {
   const contests = useStorage<Contest[] | null>('contestsLocal', contestsData, localStorage)
-  const selectedYear = ref<number>(2025)
-  const selectedShow = ref<ShowFormat | null>(ShowFormat.FirstSemiFinal)
+  const selectedYear = ref<number>(2026)
+  const selectedShow = ref<ShowFormat | null>(ShowFormat.Final)
 
   const contestants = computed(() => {
     const foundContest = contests.value?.find((contest) => contest.year === selectedYear.value)
