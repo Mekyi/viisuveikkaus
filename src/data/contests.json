@@ -1,5 +1,166 @@
 [
   {
+    "year": 2026,
+    "shows": [
+      {
+        "date": "2026-05-16",
+        "showType": 3,
+        "contestants": [
+          {
+            "country": "DK",
+            "order": 1,
+            "artist": "Søren Torpegaard Lund",
+            "song": "Før vi går hjem"
+          },
+          {
+            "country": "DE",
+            "order": 2,
+            "artist": "Sarah Engels",
+            "song": "Fire"
+          },
+          {
+            "country": "IL",
+            "order": 3,
+            "artist": "Noam Bettan",
+            "song": "Michelle"
+          },
+          {
+            "country": "BE",
+            "order": 4,
+            "artist": "Essyla",
+            "song": "Dancing on the Ice"
+          },
+          {
+            "country": "AL",
+            "order": 5,
+            "artist": "Alis",
+            "song": "Nân"
+          },
+          {
+            "country": "GR",
+            "order": 6,
+            "artist": "Akylas",
+            "song": "Ferto"
+          },
+          {
+            "country": "UA",
+            "order": 7,
+            "artist": "Leléka",
+            "song": "Ridnym"
+          },
+          {
+            "country": "AU",
+            "order": 8,
+            "artist": "Delta Goodrem",
+            "song": "Eclipse"
+          },
+          {
+            "country": "RS",
+            "order": 9,
+            "artist": "Lavina",
+            "song": "Kraj mene"
+          },
+          {
+            "country": "MT",
+            "order": 10,
+            "artist": "Aidan",
+            "song": "Bella"
+          },
+          {
+            "country": "CZ",
+            "order": 11,
+            "artist": "Daniel Zizka",
+            "song": "Crossroads"
+          },
+          {
+            "country": "BG",
+            "order": 12,
+            "artist": "Dara",
+            "song": "Bangaranga"
+          },
+          {
+            "country": "HR",
+            "order": 13,
+            "artist": "Lelek",
+            "song": "Andromeda"
+          },
+          {
+            "country": "GB",
+            "order": 14,
+            "artist": "Look Mum No Computer",
+            "song": "Eins, Zwei, Drei"
+          },
+          {
+            "country": "FR",
+            "order": 15,
+            "artist": "Monroe",
+            "song": "Regarde !"
+          },
+          {
+            "country": "MD",
+            "order": 16,
+            "artist": "Satoshi",
+            "song": "Viva, Moldova!"
+          },
+          {
+            "country": "FI",
+            "order": 17,
+            "artist": "Linda Lampenius & Pete Parkkonen",
+            "song": "Liekinheitin"
+          },
+          {
+            "country": "PL",
+            "order": 18,
+            "artist": "Alicja",
+            "song": "Pray"
+          },
+          {
+            "country": "LT",
+            "order": 19,
+            "artist": "Lion Ceccah",
+            "song": "Sólo quiero más"
+          },
+          {
+            "country": "SE",
+            "order": 20,
+            "artist": "Felicia",
+            "song": "My System"
+          },
+          {
+            "country": "CY",
+            "order": 21,
+            "artist": "Antigoni",
+            "song": "Jalla"
+          },
+          {
+            "country": "IT",
+            "order": 22,
+            "artist": "Sal Da Vinci",
+            "song": "Per sempre sì"
+          },
+          {
+            "country": "NO",
+            "order": 23,
+            "artist": "Jonas Lovv",
+            "song": "Ya Ya Ya"
+          },
+          {
+            "country": "RO",
+            "order": 24,
+            "artist": "Alexandra Căpitănescu",
+            "song": "Choke Me"
+          },
+          {
+            "country": "AT",
+            "order": 25,
+            "artist": "Cosmó",
+            "song": "Tanzschein"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "year": 2025,
     "shows": [
       {
