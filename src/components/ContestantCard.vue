@@ -36,7 +36,7 @@ const zeroPad = (num: number, places: number) => String(num).padStart(places, '0
   >
     <QCardSection
       :class="dragItem ? 'q-pa-none' : 'q-pa-sm'"
-      style="background: linear-gradient(to right, #fb41e4, #0bd9d4)"
+      style="background: linear-gradient(to right, #e30372, #1804ca)"
     >
       <QItem class="items-center justify-start">
         <QItemSection
@@ -86,11 +86,7 @@ const zeroPad = (num: number, places: number) => String(num).padStart(places, '0
 
   <QDialog v-model="dialogToggle">
     <QCard
-      style="
-        width: 700px;
-        max-width: 80vw;
-        background-image: radial-gradient(circle, #0bd9d4, #fb41e4);
-      "
+      style="width: 700px; max-width: 80vw; background-image: linear-gradient(#1804ca, #e30372)"
       class="test"
     >
       <QBar>

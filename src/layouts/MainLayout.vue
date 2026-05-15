@@ -148,7 +148,7 @@ function selectShow(showFormat: ShowFormat) {
     </QPageContainer>
 
     <QFooter elevated>
-      <QTabs class="bg-cyan-14">
+      <QTabs class="bg-indigo-10">
         <QRouteTab
           to="/rating"
           :label="$t('rating.title')"
@@ -166,7 +166,7 @@ function selectShow(showFormat: ShowFormat) {
 .animated-nav-gradient {
   animation: animateBg 5s infinite linear;
   background-color: #fff;
-  background-image: repeating-linear-gradient(90deg, #fb41e4, #0bd9d4, #fb41e4, #0bd9d4);
+  background-image: repeating-linear-gradient(90deg, #e30372, #1804ca, #e30372, #1804ca);
   background-size: 300% 100%;
   box-shadow: 0 3px 14px #000;
 }
